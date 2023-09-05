@@ -1,10 +1,5 @@
-import {sql} from '@vercel/postgres'
 import Link from 'next/link'
-
-const getData = async () => {
-  const {rows} = await sql`SELECT * FROM links`
-  return rows
-}
+import {getData} from '../server/auth'
 
 export default async function Home() {
   const links = await getData()
